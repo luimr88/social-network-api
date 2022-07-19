@@ -2,6 +2,7 @@ const { Schema, model, Types } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 const Thoughts = require('./Thoughts')
 
+// Schema for Users
 const UserSchema = new Schema(
     {
         username: {
@@ -42,6 +43,7 @@ const UserSchema = new Schema(
     }
 );
 
+// Count for amount of friends a user has
 UserSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
